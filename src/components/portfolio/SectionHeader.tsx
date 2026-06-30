@@ -23,17 +23,13 @@ export function SectionHeader({ number, kicker, title, titleAccent, intro, meta 
         {titleAccent ? (
           <>
             {" "}
-            <span className="font-serif font-normal italic text-ink-soft">
-              {titleAccent}
-            </span>
+            <span className="font-serif font-normal italic text-ink-soft">{titleAccent}</span>
           </>
         ) : null}
       </h2>
 
       {intro ? (
-        <p className="mt-5 max-w-2xl font-sans text-[16px] leading-[1.6] text-ink-soft">
-          {intro}
-        </p>
+        <p className="mt-5 max-w-2xl font-sans text-[16px] leading-[1.6] text-ink-soft">{intro}</p>
       ) : null}
     </header>
   );

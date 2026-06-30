@@ -34,9 +34,9 @@ export function AvailabilityBanner() {
 
           <div className="col-span-12 md:col-span-7">
             <p className="font-display text-[28px] font-bold leading-[1.15] tracking-[-0.015em] text-ink md:text-[38px]">
-              <span className="text-accent">“</span>I'm looking for the kind of
-              team that lets a junior engineer ship to real users in the first
-              month — and is honest about what that takes.
+              <span className="text-accent">“</span>I'm looking for the kind of team that lets a
+              junior engineer ship to real users in the first month — and is honest about what that
+              takes.
               <span className="text-accent">”</span>
             </p>
 
@@ -50,7 +50,9 @@ export function AvailabilityBanner() {
                 className="group font-sans inline-flex items-center gap-2 bg-ink px-5 py-3 text-[13px] text-paper transition hover:bg-accent"
               >
                 Write me about an internship
-                <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
+                <span aria-hidden className="transition group-hover:translate-x-0.5">
+                  →
+                </span>
               </a>
               <a
                 href="#work"
@@ -97,7 +99,6 @@ export function AvailabilityBanner() {
                       {s.body}
                     </p>
                   </div>
-
                 </li>
               ))}
             </ul>

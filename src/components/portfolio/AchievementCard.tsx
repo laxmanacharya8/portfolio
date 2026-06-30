@@ -18,9 +18,7 @@ export function AchievementCard({ a, index }: { a: Achievement; index: number })
             Team <span className="text-ink">{a.team}</span>
           </div>
         ) : null}
-        {a.location ? (
-          <div className="mt-1 text-[13px] text-ink-soft">{a.location}</div>
-        ) : null}
+        {a.location ? <div className="mt-1 text-[13px] text-ink-soft">{a.location}</div> : null}
         <div className="mt-3 text-[12px] text-accent">{a.badges[0]}</div>
       </div>
 
@@ -28,17 +26,13 @@ export function AchievementCard({ a, index }: { a: Achievement; index: number })
         <h3 className="max-w-3xl text-[22px] font-semibold leading-[1.2] tracking-[-0.01em] text-ink md:text-[28px]">
           {a.title}
         </h3>
-        <p className="mt-3 max-w-3xl text-[15px] leading-[1.65] text-ink-soft">
-          {a.description}
-        </p>
+        <p className="mt-3 max-w-3xl text-[15px] leading-[1.65] text-ink-soft">{a.description}</p>
 
         {a.stats ? (
           <dl className="mt-5 flex flex-wrap gap-x-10 gap-y-4">
             {a.stats.map((s) => (
               <div key={s.label}>
-                <dd className="text-[20px] font-semibold leading-none text-ink">
-                  {s.value}
-                </dd>
+                <dd className="text-[20px] font-semibold leading-none text-ink">{s.value}</dd>
                 <dt className="mt-1.5 text-[12px] text-ink-mute">{s.label}</dt>
               </div>
             ))}
