@@ -236,8 +236,7 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* Keep server-rendered content readable while hydration is still loading. */
-.reveal { opacity: 1; }
+.reveal { opacity: 0; }
 .reveal.is-visible { animation: reveal-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
 
 @keyframes marquee {
@@ -252,29 +251,13 @@
 }
 
 .project-marquee-track {
-  animation: none;
+  animation: project-marquee 34s linear infinite;
+  will-change: transform;
 }
 
 .project-marquee-window:hover .project-marquee-track,
 .project-marquee-window:focus-within .project-marquee-track {
   animation-play-state: paused;
-}
-
-.mobile-project-scroll {
-  overscroll-behavior-inline: contain;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mobile-project-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .project-marquee-track {
-    animation: project-marquee 34s linear infinite;
-    will-change: transform;
-  }
 }
 
 @keyframes pulse-dot {
@@ -332,49 +315,6 @@
   62% { opacity: 1; transform: translateY(-1px) skewX(-1.5deg); }
 }
 
-@media (max-width: 639px) {
-  /*
-   * iOS Safari can drop large paint tiles when blend modes, blurred layers,
-   * and fixed UI are composited together. Keep the texture on larger screens
-   * and use the solid section backgrounds on phones.
-  */
-  .dia-noise {
-    isolation: auto !important;
-  }
-
-  .dia-noise::after {
-    content: none !important;
-    display: none !important;
-    background-image: none !important;
-    mix-blend-mode: normal !important;
-  }
-
-  .dia-noise [class*="blur-"] {
-    display: none !important;
-  }
-
-  [class*="backdrop-blur"] {
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
-  }
-
-  /* Continuous variable-font effects are costly on mobile GPUs. */
-  .morph-letter,
-  .morph-letter-soft {
-    animation: none;
-    will-change: auto;
-    transform: none;
-  }
-
-  .morph-letter {
-    font-variation-settings: "wght" 700, "opsz" 144, "SOFT" 60;
-  }
-
-  .morph-letter-soft {
-    opacity: 0.88;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .reveal.is-visible, .float-in, .live-dot, .marquee-track, .project-marquee-track, .morph-letter, .morph-letter-soft {
@@ -383,3 +323,4 @@
   .project-marquee-window { overflow-x: auto; }
   .morph-letter { font-variation-settings: "wght" 700, "opsz" 144, "SOFT" 60; }
 }
+
