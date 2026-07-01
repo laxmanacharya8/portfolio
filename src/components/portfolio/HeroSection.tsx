@@ -1,4 +1,4 @@
-import portraitImg from "@/assets/laxman-portrait.png";
+import portraitImg from "@/assets/laxman-portrait.webp";
 
 const proof = [
   ["01", "HackForUHC", "1st place winner"],
@@ -81,8 +81,12 @@ export function HeroSection() {
             <img
               src={portraitImg}
               alt="Laxman Acharya, Computer Engineering student at Kathmandu University"
+              width={640}
+              height={641}
               className="hero-portrait relative z-10 h-[clamp(270px,42svh,340px)] w-auto max-w-full select-none object-contain sm:h-[clamp(340px,44svh,440px)] lg:h-[clamp(320px,42svh,440px)]"
               loading="eager"
+              decoding="async"
+              fetchPriority="high"
               draggable={false}
             />
           </div>

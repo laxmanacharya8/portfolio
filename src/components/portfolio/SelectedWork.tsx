@@ -39,12 +39,12 @@ export function SelectedWork() {
           }`}
         />
         <div
-          className={`project-marquee-window relative mt-10 overflow-hidden py-2 transition-opacity duration-500 ${
+          className={`mobile-project-scroll project-marquee-window relative mt-10 snap-x snap-mandatory overflow-x-auto py-2 transition-opacity duration-500 sm:snap-none sm:overflow-hidden ${
             github.status === "loading" ? "opacity-90" : "opacity-100"
           }`}
         >
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-paper to-transparent md:w-24" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-paper to-transparent md:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-12 bg-gradient-to-r from-paper to-transparent sm:block md:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-12 bg-gradient-to-l from-paper to-transparent sm:block md:w-24" />
 
           <div className="project-marquee-track flex w-max">
             {[0, 1].map((cycle) => (
@@ -52,7 +52,7 @@ export function SelectedWork() {
                 key={cycle}
                 aria-hidden={cycle === 1}
                 inert={cycle === 1}
-                className="flex gap-5 pr-5"
+                className={`${cycle === 1 ? "hidden sm:flex" : "flex"} gap-5 pr-5`}
               >
                 {syncedProjects.map((project, index) => (
                   <ProjectCard
@@ -60,7 +60,7 @@ export function SelectedWork() {
                     p={project}
                     index={index}
                     forceVisible
-                    className="min-h-[410px] w-[min(82vw,460px)] shrink-0 sm:w-[460px]"
+                    className="min-h-[410px] w-[min(82vw,460px)] shrink-0 snap-start sm:w-[460px]"
                   />
                 ))}
               </div>
@@ -69,7 +69,8 @@ export function SelectedWork() {
         </div>
 
         <div className="mt-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-ink-mute">
-          <span>Projects move continuously</span>
+          <span className="sm:hidden">Swipe through projects</span>
+          <span className="hidden sm:inline">Projects move continuously</span>
           <span className="hidden sm:inline">Hover to pause</span>
         </div>
       </div>

@@ -7,6 +7,12 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setVisible(true);
+      return;
+    }
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
