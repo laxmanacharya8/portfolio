@@ -64,12 +64,7 @@ function ResumePage() {
             src={`${resumeFile}#view=FitH`}
             title="Laxman Acharya resume"
             className="min-h-[calc(100dvh-5.5rem)] w-full flex-1 border-0 bg-white"
-          >
-            <p>
-              Your browser cannot display this PDF.{" "}
-              <a href={resumeFile}>Open Laxman Acharya&apos;s resume</a>.
-            </p>
-          </iframe>
+          />
         </div>
       </section>
     </main>
