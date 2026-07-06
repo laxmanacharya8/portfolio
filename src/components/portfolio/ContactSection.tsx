@@ -1,8 +1,7 @@
 import { ArrowUpRight, FileText, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { socials } from "@/data/portfolio";
 
-const resumeUrl =
-  "https://drive.google.com/file/d/1dCaSV_XMWLjPG8F7NkqnHcUmzdb_MZD5/view?usp=sharing";
 const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
   socials.email,
 )}`;
@@ -127,16 +126,14 @@ export function ContactSection() {
               >
                 <Linkedin className="size-4" />
               </a>
-              <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/resume"
                 aria-label="View resume"
                 title="Resume"
                 className="inline-flex size-10 items-center justify-center rounded-full border border-ink/12 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
               >
                 <FileText className="size-4" />
-              </a>
+              </Link>
             </nav>
 
             <span className="sm:text-right">© {new Date().getFullYear()} Laxman Acharya</span>

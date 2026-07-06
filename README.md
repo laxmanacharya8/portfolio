@@ -16,7 +16,7 @@ contact information in a dark-first editorial interface.
 - Live project metadata synchronized from the GitHub API
 - Portfolio-wide search overlay
 - Dark theme by default with a persistent light/dark switch
-- Direct links to email, GitHub, LinkedIn, and an externally hosted resume
+- Direct links to email, GitHub, LinkedIn, and a first-party resume viewer
 - Responsive navigation and accessible interactive controls
 - SEO and social-sharing metadata
 
@@ -102,10 +102,11 @@ The About section is located at:
 src/components/portfolio/AboutSection.tsx
 ```
 
-The resume link is configured in:
+The resume page and PDF are located at:
 
 ```text
-src/components/portfolio/ContactSection.tsx
+src/routes/resume.tsx
+public/Laxman_Acharya_Resume.pdf
 ```
 
 ## GitHub synchronization
