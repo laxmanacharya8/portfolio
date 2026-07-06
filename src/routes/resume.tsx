@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, Download, ExternalLink } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 
 const resumeFile = "/Laxman_Acharya_Resume.pdf";
+const resumePreview = "/Laxman_Acharya_Resume_Preview.webp";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -23,49 +24,40 @@ export const Route = createFileRoute("/resume")({
 
 function ResumePage() {
   return (
-    <main className="flex min-h-dvh flex-col bg-paper-deep text-ink">
-      <header className="border-b border-rule bg-paper/95 px-4 py-3 backdrop-blur sm:px-6 lg:px-10">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3">
+    <main className="flex h-dvh flex-col overflow-hidden bg-[#0b0b0b] text-white">
+      <header className="relative z-10 flex h-14 shrink-0 items-center border-b border-white/10 bg-[#111] px-3 sm:px-5">
+        <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between gap-3">
           <Link
             to="/"
-            className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-soft transition hover:text-accent sm:text-[11px]"
+            className="group inline-flex h-10 items-center gap-2 rounded-full px-3 font-mono text-[9px] uppercase tracking-[0.14em] text-white/70 transition hover:bg-white/10 hover:text-white sm:text-[10px]"
           >
             <ArrowLeft className="size-4 transition group-hover:-translate-x-0.5" />
-            Back to portfolio
+            Portfolio
           </Link>
 
-          <div className="flex items-center gap-2">
-            <a
-              href={resumeFile}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex size-10 items-center justify-center rounded-full border border-ink/12 text-ink-soft transition hover:border-accent hover:bg-accent hover:text-paper sm:hidden"
-              aria-label="Open resume PDF"
-              title="Open PDF"
-            >
-              <ExternalLink className="size-4" />
-            </a>
-            <a
-              href={resumeFile}
-              download="Laxman_Acharya_Resume.pdf"
-              className="inline-flex items-center gap-2 rounded-full border border-ink/12 bg-ink px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.14em] text-paper transition hover:-translate-y-0.5 hover:bg-accent sm:text-[10px]"
-            >
-              <Download className="size-3.5" />
-              Download
-            </a>
-          </div>
+          <a
+            href={resumeFile}
+            download="Laxman_Acharya_Resume.pdf"
+            className="inline-flex h-10 items-center gap-2 rounded-full bg-white px-4 font-mono text-[9px] uppercase tracking-[0.14em] text-black transition hover:-translate-y-0.5 hover:bg-[#f0f0f0] sm:text-[10px]"
+          >
+            <Download className="size-3.5" />
+            PDF
+          </a>
         </div>
       </header>
 
-      <section className="flex flex-1 flex-col px-2 py-2 sm:px-4 sm:py-4 lg:px-8">
+      <section className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-2 sm:p-4">
         <h1 className="sr-only">Laxman Acharya's resume</h1>
-        <div className="mx-auto flex min-h-[calc(100dvh-5.5rem)] w-full max-w-[1400px] flex-1 overflow-hidden rounded-xl border border-ink/10 bg-white shadow-[0_20px_70px_rgba(20,15,12,0.12)] sm:rounded-2xl">
-          <iframe
-            src={`${resumeFile}#view=FitH`}
-            title="Laxman Acharya resume"
-            className="min-h-[calc(100dvh-5.5rem)] w-full flex-1 border-0 bg-white"
-          />
-        </div>
+        <img
+          src={resumePreview}
+          alt="Laxman Acharya software engineering resume"
+          width={1489}
+          height={2105}
+          fetchPriority="high"
+          decoding="async"
+          draggable={false}
+          className="block h-auto w-auto max-h-full max-w-full select-none object-contain shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
+        />
       </section>
     </main>
   );
