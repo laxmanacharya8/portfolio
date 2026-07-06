@@ -70,12 +70,13 @@ export const achievements: Achievement[] = [
   },
   {
     id: "harvard",
-    title: "Harvard Health Hackathon National Finalist",
-    date: "Kathmandu University",
+    title: "Harvard Health Systems Innovation Lab Hackathon",
+    date: "April 10–11, 2026",
     team: "Never Silent Pass",
-    badges: ["National Finalist", "Digital Health", "Kathmandu"],
+    location: "Kathmandu Hub",
+    badges: ["Participant", "Health Systems", "AI", "Kathmandu Hub"],
     description:
-      "It was a great experience presenting at the National Finale of the Harvard Health Hackathon held at Kathmandu University with team Never Silent Pass. This experience challenged us to think critically, collaborate under pressure, and turn ideas into meaningful solutions for real-world healthcare problems.",
+      "Participated with team Never Silent Pass in the 7th edition of the Harvard Health Systems Innovation Lab Hackathon at the Kathmandu Hub. The event focused on building high-value health systems by leveraging AI.",
   },
 ];
 

@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "HackForUHC 2026 winner, openIMIS Community Meeting presenter, Harvard Health Hackathon finalist. Projects in digital health, language accessibility, and student finance.",
+          "HackForUHC 2026 winner, openIMIS Community Meeting presenter, and Harvard Health Systems Innovation Lab Hackathon participant. Projects in digital health, language accessibility, and student finance.",
       },
     ],
   }),

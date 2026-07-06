@@ -28,7 +28,7 @@ const searchItems = [
   {
     href: "#dispatches",
     title: "Harvard Health Hackathon",
-    keywords: "harvard finalist Kathmandu University healthcare achievements",
+    keywords: "harvard participant Kathmandu health systems AI hackathon achievements",
   },
   {
     href: "#work",

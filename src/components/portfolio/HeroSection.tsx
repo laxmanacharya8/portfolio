@@ -3,7 +3,7 @@ import portraitImg from "@/assets/laxman-portrait.png";
 const proof = [
   ["01", "HackForUHC", "1st place winner"],
   ["02", "openIMIS", "Presented to global community"],
-  ["03", "Harvard Health", "National finalist"],
+  ["03", "Harvard Health", "Hackathon participant"],
 ];
 
 // Dia-style mixed wordmark: heavy Fraunces "Lax" morphs weight/softness,
