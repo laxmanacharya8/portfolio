@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileText, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { socials } from "@/data/portfolio";
 
@@ -95,44 +95,39 @@ export function ContactSection() {
               Built in Kathmandu
             </span>
 
-            <nav aria-label="Contact links" className="flex items-center gap-2">
+            <nav
+              aria-label="Contact links"
+              className="flex flex-wrap items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em]"
+            >
               <a
                 href={emailComposeUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Email"
-                title="Email"
-                className="inline-flex size-10 items-center justify-center rounded-full border border-ink/12 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
+                className="inline-flex h-10 items-center justify-center rounded-full border border-ink/12 px-4 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
               >
-                <Mail className="size-4" />
+                Email
               </a>
               <a
                 href={socials.github}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="GitHub"
-                title="GitHub"
-                className="inline-flex size-10 items-center justify-center rounded-full border border-ink/12 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
+                className="inline-flex h-10 items-center justify-center rounded-full border border-ink/12 px-4 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
               >
-                <Github className="size-4" />
+                GitHub
               </a>
               <a
                 href={socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-                className="inline-flex size-10 items-center justify-center rounded-full border border-ink/12 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
+                className="inline-flex h-10 items-center justify-center rounded-full border border-ink/12 px-4 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
               >
-                <Linkedin className="size-4" />
+                LinkedIn
               </a>
               <Link
                 to="/resume"
-                aria-label="View resume"
-                title="Resume"
-                className="inline-flex size-10 items-center justify-center rounded-full border border-ink/12 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
+                className="inline-flex h-10 items-center justify-center rounded-full border border-ink/12 px-4 text-ink-soft transition hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-paper"
               >
-                <FileText className="size-4" />
+                Resume
               </Link>
             </nav>
 
