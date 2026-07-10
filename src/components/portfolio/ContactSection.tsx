@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { socials } from "@/data/portfolio";
 
@@ -89,12 +89,7 @@ export function ContactSection() {
             </aside>
           </div>
 
-          <footer className="relative mt-8 flex flex-col items-center gap-4 rounded-[22px] border border-ink/10 bg-paper-raised/55 px-4 py-5 text-center text-[11px] text-ink-mute shadow-[0_14px_45px_rgba(20,15,12,0.06)] sm:grid sm:grid-cols-[1fr_auto_1fr] sm:gap-5 sm:px-5 sm:py-4 sm:text-left">
-            <span className="inline-flex items-center gap-2">
-              <MapPin className="size-3.5" />
-              Built in Kathmandu
-            </span>
-
+          <footer className="relative mt-8 flex flex-col items-center justify-center gap-4 rounded-[22px] border border-ink/10 bg-paper-raised/55 px-4 py-5 text-center text-[11px] text-ink-mute shadow-[0_14px_45px_rgba(20,15,12,0.06)] sm:flex-row sm:justify-between sm:gap-5 sm:px-5 sm:py-4 sm:text-left">
             <nav
               aria-label="Contact links"
               className="flex flex-wrap items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em]"
