@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Download } from "lucide-react";
 
-const resumeFile = "/Laxman_Acharya_Resume.pdf";
+const resumeFile = "/resume.pdf";
 const resumePreview = "/Laxman_Acharya_Resume_Preview.webp";
 
 export const Route = createFileRoute("/resume")({
