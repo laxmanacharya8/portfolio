@@ -10,7 +10,8 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "npm run build:resume && vite build",
+    "build:resume": "bash scripts/build-resume.sh",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

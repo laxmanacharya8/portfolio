@@ -37,6 +37,7 @@ contact information in a dark-first editorial interface.
 
 - Node.js 20 or newer
 - npm
+- Tectonic, Poppler, and WebP command-line tools for building the resume
 
 ### Install and run
 
@@ -58,7 +59,8 @@ http://localhost:5173
 | Command | Purpose |
 | --- | --- |
 | `npm run dev` | Start the development server |
-| `npm run build` | Create the production build |
+| `npm run build` | Compile the resume and create the production site build |
+| `npm run build:resume` | Compile the LaTeX resume PDF and preview image |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run ESLint across the project |
 | `npm run format` | Format the project with Prettier |
@@ -102,12 +104,20 @@ The About section is located at:
 src/components/portfolio/AboutSection.tsx
 ```
 
-The resume page and PDF are located at:
+The resume source, build script, page, and generated assets are located at:
 
 ```text
+resume/Laxman_Acharya_Resume.tex
+scripts/build-resume.sh
 src/routes/resume.tsx
 public/Laxman_Acharya_Resume.pdf
+public/Laxman_Acharya_Resume_Preview.webp
+public/resume.pdf
 ```
+
+`npm run build` compiles the LaTeX source before building the website. CI and production deploys
+install the required tools automatically, so every deployment serves a PDF and preview generated
+from the committed `.tex` file.
 
 ## GitHub synchronization
 

@@ -17,7 +17,7 @@ jobs:
   quality:
     name: Lint & Build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -29,6 +29,14 @@ jobs:
           node-version: 22
           cache: npm
           cache-dependency-path: package-lock.json
+
+      - name: Setup Tectonic
+        uses: wtfjoke/setup-tectonic@eb29fd68b7d3f76011906b6e45ea4320c8de5d2f # v4
+        with:
+          tectonic-version: 0.16.9
+
+      - name: Install resume preview tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils webp
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund

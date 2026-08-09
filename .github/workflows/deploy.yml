@@ -52,6 +52,16 @@ jobs:
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Setup Tectonic
+        if: steps.cloudflare.outputs.configured == 'true'
+        uses: wtfjoke/setup-tectonic@eb29fd68b7d3f76011906b6e45ea4320c8de5d2f # v4
+        with:
+          tectonic-version: 0.16.9
+
+      - name: Install resume preview tools
+        if: steps.cloudflare.outputs.configured == 'true'
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils webp
+
       - name: Install dependencies
         if: steps.cloudflare.outputs.configured == 'true'
         run: npm ci --no-audit --no-fund

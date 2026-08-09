@@ -10,12 +10,12 @@ export const Route = createFileRoute("/resume")({
       { title: "Resume | Laxman Acharya" },
       {
         name: "description",
-        content: "View and download Laxman Acharya's software engineering resume.",
+        content: "View and download Laxman Acharya's hardware and systems engineering resume.",
       },
       { property: "og:title", content: "Resume | Laxman Acharya" },
       {
         property: "og:description",
-        content: "Laxman Acharya's software engineering resume.",
+        content: "Laxman Acharya's hardware and systems engineering resume.",
       },
     ],
   }),
@@ -50,9 +50,9 @@ function ResumePage() {
         <h1 className="sr-only">Laxman Acharya's resume</h1>
         <img
           src={resumePreview}
-          alt="Laxman Acharya software engineering resume"
-          width={1489}
-          height={2105}
+          alt="Laxman Acharya hardware and systems engineering resume"
+          width={1530}
+          height={1980}
           fetchPriority="high"
           decoding="async"
           draggable={false}
