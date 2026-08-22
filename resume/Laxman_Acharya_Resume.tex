@@ -133,11 +133,14 @@ functional verification flow. Works end to end in C, Verilog and Python, from RT
 \section{Open-Source Contributions}
 %==============================================================================
 \entry{Linux Kernel \divider 8 accepted/applied patches}{2026}
-\subentry{C \divider git send-email \divider KUnit \divider Mailing-list maintainer review}{Upstream}
 \begin{tight}
-  \item Root-caused and closed an out-of-bounds access path in DRM/panel firmware and configuration-table handling; fixed power-off behaviour on prepare failure.
-  \item Hardened Bluetooth LE event handling against unsafe state transitions; corrected EEPROM and CLC parsing in the MediaTek Wi-Fi driver and coreboot table bounds.
-  \item Authored, submitted and revised every patch through mailing-list review; all eight accepted or applied by subsystem maintainers.
+  \item Authored the mainline fix for \href{https://www.cve.org/CVERecord?id=CVE-2026-68479}{CVE-2026-68479} (CVSS 7.8 High), preventing integer underflow/overflow and out-of-bounds access in Realtek Bluetooth firmware parsing.
+  \item Submitted eight patches across Bluetooth, MediaTek Wi-Fi, coreboot and DRM/panel through mailing-list review; all accepted or applied by maintainers.
+\end{tight}
+
+\entry{Bitcoin Core \divider \href{https://github.com/bitcoin/bitcoin/pull/35955}{merged upstream PR \#35955}}{2026}
+\begin{tight}
+  \item Removed obsolete wallet declarations and \texttt{LegacyScriptPubKeyMan} references; updated the retained migration path and targeted wallet tests.
 \end{tight}
 
 \entry{hippo-memory \divider 3 merged pull requests \divider kitfunso/hippo-memory}{2026}
