@@ -133,17 +133,20 @@ functional verification flow. Works end to end in C, Verilog and Python, from RT
 \section{Open-Source Contributions}
 %==============================================================================
 \entry{Linux Kernel \divider 10 accepted upstream patches}{2026}
-{\fontsize{7.5}{8.2}\selectfont
-\href{https://github.com/torvalds/linux/commit/a9f950adfe2147318d75e7a6eab5e814851802ac}{\texttt{a9f950adfe21}} --- drm/panel: samsung-s6d16d0: Power off on prepare failure \divider
-\href{https://github.com/torvalds/linux/commit/a41000ba3a230bed1e422f283486ff8f77fe0d30}{\texttt{a41000ba3a23}} --- iio: light: gp2ap002: Disable regulators on resume failure \divider
-\href{https://github.com/torvalds/linux/commit/609c5b04a28dc1b0f3af6a7bc93055135b2d2059}{\texttt{609c5b04a28d}} --- Bluetooth: btrtl: validate firmware patch bounds (\href{https://www.cve.org/CVERecord?id=CVE-2026-68479}{CVE-2026-68479}) \divider
-\href{https://github.com/torvalds/linux/commit/653c6e289b13cc6942f3e8f8e3c568e70fa42d1f}{\texttt{653c6e289b13}} --- wifi: mt76: mt7996: validate default EEPROM firmware size \divider
-\href{https://github.com/torvalds/linux/commit/9417c5818a0146980c2608fda94c908e604eb033}{\texttt{9417c5818a01}} --- wifi: mt76: mt7921: validate CLC firmware records \divider
-\href{https://github.com/torvalds/linux/commit/2bf6b9baca9372ea51b6d0f2820dc9bf29a83ef4}{\texttt{2bf6b9baca93}} --- Bluetooth: hci\_aml: validate firmware segment lengths \divider
-\href{https://github.com/torvalds/linux/commit/0acd4eeb4b225b9bebbf9ef96cc10cdd79b94899}{\texttt{0acd4eeb4b22}} --- Bluetooth: hci\_event: validate LE Set CIG Parameters response \divider
-\href{https://github.com/torvalds/linux/commit/a58a57a1076f8c5dae0327e3710899478c3be901}{\texttt{a58a57a1076f}} --- firmware: coreboot: Validate table bounds \divider
-\href{https://github.com/torvalds/linux/commit/e3643fbddb257c928c075cab05bbd929106b56ee}{\texttt{e3643fbddb25}} --- Bluetooth: hci\_event: fix out-of-bounds read in LE PA report reassembly \divider
-\href{https://kernel.googlesource.com/pub/scm/linux/kernel/git/jic23/iio/+/f0f3401388dc9ba396d0c64888cf5aaf65e0dc06}{\texttt{f0f3401388dc}} --- iio: proximity: aw96103: validate firmware data length.\par}
+\begin{tight}
+  \item \textbf{Security impact:} Authored the \href{https://github.com/torvalds/linux/commit/609c5b04a28dc1b0f3af6a7bc93055135b2d2059}{Realtek Bluetooth firmware-bounds fix} assigned \href{https://www.cve.org/CVERecord?id=CVE-2026-68479}{CVE-2026-68479}, preventing integer underflow/overflow and out-of-bounds access; delivered nine additional memory-safety, firmware-validation and failure-path fixes across Bluetooth, DRM/panel, IIO, MediaTek Wi-Fi and coreboot.
+\end{tight}
+{\fontsize{7.8}{8.4}\selectfont\textbf{Linked commits, ordered by impact:}
+\href{https://github.com/torvalds/linux/commit/609c5b04a28dc1b0f3af6a7bc93055135b2d2059}{\texttt{609c5b04a28d}} \divider
+\href{https://github.com/torvalds/linux/commit/e3643fbddb257c928c075cab05bbd929106b56ee}{\texttt{e3643fbddb25}} \divider
+\href{https://github.com/torvalds/linux/commit/0acd4eeb4b225b9bebbf9ef96cc10cdd79b94899}{\texttt{0acd4eeb4b22}} \divider
+\href{https://github.com/torvalds/linux/commit/2bf6b9baca9372ea51b6d0f2820dc9bf29a83ef4}{\texttt{2bf6b9baca93}} \divider
+\href{https://github.com/torvalds/linux/commit/a58a57a1076f8c5dae0327e3710899478c3be901}{\texttt{a58a57a1076f}} \divider
+\href{https://github.com/torvalds/linux/commit/653c6e289b13cc6942f3e8f8e3c568e70fa42d1f}{\texttt{653c6e289b13}} \divider
+\href{https://github.com/torvalds/linux/commit/9417c5818a0146980c2608fda94c908e604eb033}{\texttt{9417c5818a01}} \divider
+\href{https://kernel.googlesource.com/pub/scm/linux/kernel/git/jic23/iio/+/f0f3401388dc9ba396d0c64888cf5aaf65e0dc06}{\texttt{f0f3401388dc}} \divider
+\href{https://github.com/torvalds/linux/commit/a9f950adfe2147318d75e7a6eab5e814851802ac}{\texttt{a9f950adfe21}} \divider
+\href{https://github.com/torvalds/linux/commit/a41000ba3a230bed1e422f283486ff8f77fe0d30}{\texttt{a41000ba3a23}}\par}
 
 \entry{Bitcoin Core}{2026}
 \begin{tight}
