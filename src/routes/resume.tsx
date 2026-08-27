@@ -1,8 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Download } from "lucide-react";
+import { lazy, Suspense } from "react";
 
 const resumeFile = "/resume.pdf";
 const resumePreview = "/Laxman_Acharya_Resume_Preview.webp";
+const ResumePdfViewer = lazy(() =>
+  import("@/components/resume/ResumePdfViewer").then((module) => ({
+    default: module.ResumePdfViewer,
+  })),
+);
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -46,18 +52,21 @@ function ResumePage() {
         </div>
       </header>
 
-      <section className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-2 sm:p-4">
+      <section className="flex min-h-0 flex-1 items-start justify-center overflow-auto p-2 sm:p-4">
         <h1 className="sr-only">Laxman Acharya's resume</h1>
-        <img
-          src={resumePreview}
-          alt="Laxman Acharya hardware and systems engineering resume"
-          width={1530}
-          height={1980}
-          fetchPriority="high"
-          decoding="async"
-          draggable={false}
-          className="block h-auto w-auto max-h-full max-w-full select-none object-contain shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
-        />
+        <Suspense
+          fallback={
+            <img
+              src={resumePreview}
+              alt="Laxman Acharya hardware and systems engineering resume"
+              width={1530}
+              height={1980}
+              className="block h-auto w-full max-w-[1000px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
+            />
+          }
+        >
+          <ResumePdfViewer file={resumeFile} />
+        </Suspense>
       </section>
     </main>
   );
