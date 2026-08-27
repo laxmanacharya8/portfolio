@@ -31,6 +31,11 @@ const searchItems = [
     keywords: "harvard participant Kathmandu health systems AI hackathon achievements",
   },
   {
+    href: "#upstream",
+    title: "Upstream Open-Source Contributions",
+    keywords: "linux kernel CVE bluetooth bitcoin core hippo-memory upstream open source patches",
+  },
+  {
     href: "#work",
     title: "Bridgelens",
     keywords: "translation browser extension javascript tamang nepali language project",

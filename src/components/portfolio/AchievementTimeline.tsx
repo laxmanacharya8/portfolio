@@ -11,7 +11,7 @@ export function AchievementTimeline() {
           kicker="Achievements"
           title="Work that survived"
           titleAccent="outside the classroom."
-          intro="Awards, presentations, and public-health rooms where the work had to be clear enough for people beyond the codebase."
+          intro="Awards, presentations, public-health rooms, and upstream code where the work had to be clear enough for people beyond the codebase."
           meta={`${achievements.length} entries · 2025–2026`}
         />
         <div className="mt-10">
