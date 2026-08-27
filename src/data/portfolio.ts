@@ -78,6 +78,75 @@ export const achievements: Achievement[] = [
     description:
       "Participated with team Never Silent Pass in the 7th edition of the Harvard Health Systems Innovation Lab Hackathon at the Kathmandu Hub. The event focused on building high-value health systems by leveraging AI.",
   },
+  {
+    id: "upstream",
+    title: "Upstream Contributions — Linux Kernel & Beyond",
+    date: "2026",
+    location: "Linux · Bitcoin Core · hippo-memory",
+    badges: ["Upstream", "Linux Kernel", "CVE", "Open Source"],
+    description:
+      "Contributed accepted fixes to the Linux kernel, Bitcoin Core, and hippo-memory. Linux work includes 10 accepted upstream patches across Bluetooth, DRM/panel, IIO, MediaTek Wi-Fi, and coreboot, led by the Realtek firmware-bounds fix assigned CVE-2026-68479. In Bitcoin Core, removed obsolete wallet declarations and LegacyScriptPubKeyMan references, then updated the retained migration path and targeted wallet tests. In hippo-memory, landed three pull requests fixing zero-context budget handling, fractional drill-depth validation, and malformed-version rollback guards with regression coverage.",
+    stats: [
+      { value: "10", label: "accepted kernel patches" },
+      { value: "1", label: "assigned CVE" },
+      { value: "BTC", label: "Bitcoin Core" },
+      { value: "3", label: "merged hippo-memory PRs" },
+    ],
+    links: [
+      {
+        label: "CVE-2026-68479",
+        href: "https://www.cve.org/CVERecord?id=CVE-2026-68479",
+      },
+      {
+        label: "609c5b04a28d",
+        href: "https://github.com/torvalds/linux/commit/609c5b04a28dc1b0f3af6a7bc93055135b2d2059",
+      },
+      {
+        label: "e3643fbddb25",
+        href: "https://github.com/torvalds/linux/commit/e3643fbddb257c928c075cab05bbd929106b56ee",
+      },
+      {
+        label: "0acd4eeb4b22",
+        href: "https://github.com/torvalds/linux/commit/0acd4eeb4b225b9bebbf9ef96cc10cdd79b94899",
+      },
+      {
+        label: "2bf6b9baca93",
+        href: "https://github.com/torvalds/linux/commit/2bf6b9baca9372ea51b6d0f2820dc9bf29a83ef4",
+      },
+      {
+        label: "a58a57a1076f",
+        href: "https://github.com/torvalds/linux/commit/a58a57a1076f8c5dae0327e3710899478c3be901",
+      },
+      {
+        label: "653c6e289b13",
+        href: "https://github.com/torvalds/linux/commit/653c6e289b13cc6942f3e8f8e3c568e70fa42d1f",
+      },
+      {
+        label: "9417c5818a01",
+        href: "https://github.com/torvalds/linux/commit/9417c5818a0146980c2608fda94c908e604eb033",
+      },
+      {
+        label: "f0f3401388dc",
+        href: "https://kernel.googlesource.com/pub/scm/linux/kernel/git/jic23/iio/+/f0f3401388dc9ba396d0c64888cf5aaf65e0dc06",
+      },
+      {
+        label: "a9f950adfe21",
+        href: "https://github.com/torvalds/linux/commit/a9f950adfe2147318d75e7a6eab5e814851802ac",
+      },
+      {
+        label: "a41000ba3a23",
+        href: "https://github.com/torvalds/linux/commit/a41000ba3a230bed1e422f283486ff8f77fe0d30",
+      },
+      {
+        label: "Bitcoin Core PR #35955",
+        href: "https://github.com/bitcoin/bitcoin/pull/35955",
+      },
+      {
+        label: "hippo-memory",
+        href: "https://github.com/kitfunso/hippo-memory",
+      },
+    ],
+  },
 ];
 
 export const projects: Project[] = [
