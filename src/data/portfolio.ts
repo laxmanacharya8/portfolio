@@ -40,45 +40,6 @@ export const statusChips = [
 
 export const achievements: Achievement[] = [
   {
-    id: "hackforuhc",
-    title: "HackForUHC 2026 — 1st Place",
-    date: "June 18–19, 2026",
-    team: "CLAIM∅",
-    badges: ["1st Place", "Digital Health", "openIMIS", "Kathmandu"],
-    description:
-      "As team CLAIM∅, we won 1st place at HackForUHC 2026, a national hackathon focused on digital innovation for openIMIS and universal health coverage. After the win, we were invited to participate in and present our solution at the 10th anniversary openIMIS Community Meeting in Kathmandu.",
-    links: [
-      { label: "HackForUHC 2026 event listing", href: "#hackforuhc-event" },
-      { label: "Health Informatics Lab announcement", href: "#hil-announcement" },
-      { label: "openIMIS Community Meeting presentation", href: "#openimis-presentation" },
-    ],
-  },
-  {
-    id: "openimis",
-    title: "Presented at the 10th Anniversary openIMIS Community Meeting",
-    date: "June 23–25, 2026",
-    location: "Kathmandu, Nepal",
-    badges: ["Presented", "openIMIS", "Digital Health", "Kathmandu"],
-    description:
-      "Following our HackForUHC 2026 win, our team presented our solution at the 10th anniversary openIMIS Community Meeting in Kathmandu. The event brought together software developers, implementers, academia, funders, and stakeholders working on health insurance, social protection, and digital public goods.",
-    stats: [
-      { value: "120+", label: "participants" },
-      { value: "20", label: "countries" },
-      { value: "KTM", label: "Kathmandu, Nepal" },
-      { value: "DPG", label: "Digital public goods" },
-    ],
-  },
-  {
-    id: "harvard",
-    title: "Harvard Health Systems Innovation Lab Hackathon",
-    date: "April 10–11, 2026",
-    team: "Never Silent Pass",
-    location: "Kathmandu Hub",
-    badges: ["Participant", "Health Systems", "AI", "Kathmandu Hub"],
-    description:
-      "Participated with team Never Silent Pass in the 7th edition of the Harvard Health Systems Innovation Lab Hackathon at the Kathmandu Hub. The event focused on building high-value health systems by leveraging AI.",
-  },
-  {
     id: "upstream",
     title: "Upstream Contributions — Linux Kernel & Beyond",
     date: "2026",
@@ -146,6 +107,45 @@ export const achievements: Achievement[] = [
         href: "https://github.com/kitfunso/hippo-memory",
       },
     ],
+  },
+  {
+    id: "hackforuhc",
+    title: "HackForUHC 2026 — 1st Place",
+    date: "June 18–19, 2026",
+    team: "CLAIM∅",
+    badges: ["1st Place", "Digital Health", "openIMIS", "Kathmandu"],
+    description:
+      "As team CLAIM∅, we won 1st place at HackForUHC 2026, a national hackathon focused on digital innovation for openIMIS and universal health coverage. After the win, we were invited to participate in and present our solution at the 10th anniversary openIMIS Community Meeting in Kathmandu.",
+    links: [
+      { label: "HackForUHC 2026 event listing", href: "#hackforuhc-event" },
+      { label: "Health Informatics Lab announcement", href: "#hil-announcement" },
+      { label: "openIMIS Community Meeting presentation", href: "#openimis-presentation" },
+    ],
+  },
+  {
+    id: "openimis",
+    title: "Presented at the 10th Anniversary openIMIS Community Meeting",
+    date: "June 23–25, 2026",
+    location: "Kathmandu, Nepal",
+    badges: ["Presented", "openIMIS", "Digital Health", "Kathmandu"],
+    description:
+      "Following our HackForUHC 2026 win, our team presented our solution at the 10th anniversary openIMIS Community Meeting in Kathmandu. The event brought together software developers, implementers, academia, funders, and stakeholders working on health insurance, social protection, and digital public goods.",
+    stats: [
+      { value: "120+", label: "participants" },
+      { value: "20", label: "countries" },
+      { value: "KTM", label: "Kathmandu, Nepal" },
+      { value: "DPG", label: "Digital public goods" },
+    ],
+  },
+  {
+    id: "harvard",
+    title: "Harvard Health Systems Innovation Lab Hackathon",
+    date: "April 10–11, 2026",
+    team: "Never Silent Pass",
+    location: "Kathmandu Hub",
+    badges: ["Participant", "Health Systems", "AI", "Kathmandu Hub"],
+    description:
+      "Participated with team Never Silent Pass in the 7th edition of the Harvard Health Systems Innovation Lab Hackathon at the Kathmandu Hub. The event focused on building high-value health systems by leveraging AI.",
   },
 ];
 
