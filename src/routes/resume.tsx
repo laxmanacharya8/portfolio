@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { ClientOnly, createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Download } from "lucide-react";
 import { lazy, Suspense } from "react";
 
@@ -54,20 +54,24 @@ function ResumePage() {
 
       <section className="flex min-h-0 flex-1 items-start justify-center overflow-auto p-2 sm:p-4">
         <h1 className="sr-only">Laxman Acharya's resume</h1>
-        <Suspense
-          fallback={
-            <img
-              src={resumePreview}
-              alt="Laxman Acharya hardware and systems engineering resume"
-              width={1530}
-              height={1980}
-              className="block h-auto w-full max-w-[1000px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
-            />
-          }
-        >
-          <ResumePdfViewer file={resumeFile} />
-        </Suspense>
+        <ClientOnly fallback={<ResumePreview />}>
+          <Suspense fallback={<ResumePreview />}>
+            <ResumePdfViewer file={resumeFile} />
+          </Suspense>
+        </ClientOnly>
       </section>
     </main>
+  );
+}
+
+function ResumePreview() {
+  return (
+    <img
+      src={resumePreview}
+      alt="Laxman Acharya hardware and systems engineering resume"
+      width={1530}
+      height={1980}
+      className="block h-auto w-full max-w-[1000px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.5)]"
+    />
   );
 }
