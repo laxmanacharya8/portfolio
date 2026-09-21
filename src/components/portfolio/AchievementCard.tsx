@@ -1,3 +1,4 @@
+import { KernelContributions } from "./KernelContributions";
 import type { Achievement } from "@/data/portfolio";
 import { useReveal } from "@/hooks/useReveal";
 
@@ -10,7 +11,7 @@ export function AchievementCard({ a, index }: { a: Achievement; index: number })
     <article
       id={a.id}
       ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} grid scroll-mt-28 grid-cols-12 gap-x-8 gap-y-4 border-t border-rule py-8 first:border-t-0`}
+      className={`reveal ${visible ? "is-visible" : ""} grid scroll-mt-28 grid-cols-12 gap-x-2 gap-y-4 md:gap-x-8 border-t border-rule py-8 first:border-t-0`}
     >
       <div className="col-span-12 md:col-span-3">
         <div className="text-[13px] text-ink-mute">{n}</div>
@@ -24,7 +25,7 @@ export function AchievementCard({ a, index }: { a: Achievement; index: number })
         <div className="mt-3 text-[12px] text-accent">{a.badges[0]}</div>
       </div>
 
-      <div className="col-span-12 md:col-span-9">
+      <div className="col-span-12 min-w-0 md:col-span-9">
         <h3 className="max-w-3xl text-[22px] font-semibold leading-[1.2] tracking-[-0.01em] text-ink md:text-[28px]">
           {a.title}
         </h3>
@@ -40,6 +41,8 @@ export function AchievementCard({ a, index }: { a: Achievement; index: number })
             ))}
           </dl>
         ) : null}
+
+        {a.id === "upstream" ? <KernelContributions /> : null}
 
         {a.teamMembers ? (
           <p className="mt-5 text-[13.5px] text-ink-soft">
