@@ -14,6 +14,7 @@ interface ResumePdfViewerProps {
 export function ResumePdfViewer({ file }: ResumePdfViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pageWidth, setPageWidth] = useState(0);
+  const [numPages, setNumPages] = useState(0);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -35,6 +36,7 @@ export function ResumePdfViewer({ file }: ResumePdfViewerProps) {
     >
       <Document
         file={file}
+        onLoadSuccess={({ numPages }) => setNumPages(numPages)}
         externalLinkTarget="_blank"
         externalLinkRel="noopener noreferrer"
         loading={<div className="aspect-[612/792] animate-pulse bg-white/90" />}
@@ -49,9 +51,17 @@ export function ResumePdfViewer({ file }: ResumePdfViewerProps) {
           </a>
         }
       >
-        {pageWidth > 0 ? (
-          <Page pageNumber={1} width={pageWidth} renderAnnotationLayer renderTextLayer={false} />
-        ) : null}
+        {pageWidth > 0
+          ? Array.from({ length: numPages }, (_, index) => (
+              <Page
+                key={index + 1}
+                pageNumber={index + 1}
+                width={pageWidth}
+                renderAnnotationLayer
+                renderTextLayer={false}
+              />
+            ))
+          : null}
       </Document>
     </div>
   );
