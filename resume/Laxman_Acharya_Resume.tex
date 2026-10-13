@@ -1,6 +1,6 @@
 %==============================================================================
 %  Laxman Acharya - Engineering Internship Resume
-%  Single-column, single-page, ATS-parseable.
+%  Single-column, ATS-parseable.
 %  Build:  npm run build:resume (Tectonic) or pdflatex Laxman_Acharya_Resume.tex
 %  Paper:  US Letter. Change "letterpaper" -> "a4paper" for EU/APAC submissions.
 %==============================================================================
@@ -96,8 +96,8 @@ Kathmandu, Nepal \divider +977 9768332097 \divider
 \section{Summary}
 %==============================================================================
 Computer Engineering undergraduate seeking a summer hardware or systems-software engineering
-internship in silicon design, pre-silicon validation and debug, or firmware. Ten accepted upstream
-Linux kernel patches across the Bluetooth, DRM/panel, firmware and MediaTek Wi-Fi subsystems, plus a
+internship in silicon design, pre-silicon validation and debug, or firmware. Seventeen accepted upstream
+Linux kernel patches (15 mainline, 2 maintainer-tree), including six fixes assigned CVEs, plus a
 4-bit RISC-inspired processor designed in Verilog with a custom ISA, assembler and simulation-based
 functional verification flow. Works end to end in C, Verilog and Python, from RTL and driver debug up.
 
@@ -132,21 +132,12 @@ functional verification flow. Works end to end in C, Verilog and Python, from RT
 %==============================================================================
 \section{Open-Source Contributions}
 %==============================================================================
-\entry{Linux Kernel \divider 10 accepted upstream patches}{2026}
+% Counts and Linux CNA scores match the portfolio snapshot verified 21 September 2026.
+\entry{Linux Kernel \divider 17 accepted upstream patches}{2026}
 \begin{tight}
-  \item \textbf{Security impact:} Authored the \href{https://github.com/torvalds/linux/commit/609c5b04a28dc1b0f3af6a7bc93055135b2d2059}{Realtek Bluetooth firmware-bounds fix} assigned \href{https://www.cve.org/CVERecord?id=CVE-2026-68479}{CVE-2026-68479}, preventing integer underflow/overflow and out-of-bounds access; delivered nine additional memory-safety, firmware-validation and failure-path fixes across Bluetooth, DRM/panel, IIO, MediaTek Wi-Fi and coreboot.
+  \item \textbf{Upstream impact:} 15 patches merged into mainline and 2 accepted into maintainer trees across Bluetooth, DRM/panel, IIO, Wi-Fi, coreboot and io\_uring; fixed memory-safety, firmware-validation and failure-path bugs. \href{https://laxmanacharya.com.np/#dispatches}{Patch links and status} (21 Sep 2026).
+  \item \textbf{Security impact:} Six fixes assigned CVEs, including three rated High by Linux CNA (CVSS 3.1): \href{https://www.cve.org/CVERecord?id=CVE-2026-68479}{CVE-2026-68479} (7.8, Bluetooth firmware bounds), \href{https://www.cve.org/CVERecord?id=CVE-2026-80933}{CVE-2026-80933} (7.8, Wi-Fi EEPROM size) and \href{https://www.cve.org/CVERecord?id=CVE-2026-90341}{CVE-2026-90341} (7.7, coreboot table bounds). Additional fixes: \href{https://www.cve.org/CVERecord?id=CVE-2026-80759}{CVE-2026-80759}, \href{https://www.cve.org/CVERecord?id=CVE-2026-80763}{CVE-2026-80763} and \href{https://www.cve.org/CVERecord?id=CVE-2026-81009}{CVE-2026-81009}.
 \end{tight}
-{\fontsize{7.8}{8.4}\selectfont\textbf{Linked commits:}
-\href{https://github.com/torvalds/linux/commit/609c5b04a28dc1b0f3af6a7bc93055135b2d2059}{\texttt{609c5b04a28d}} \divider
-\href{https://github.com/torvalds/linux/commit/e3643fbddb257c928c075cab05bbd929106b56ee}{\texttt{e3643fbddb25}} \divider
-\href{https://github.com/torvalds/linux/commit/0acd4eeb4b225b9bebbf9ef96cc10cdd79b94899}{\texttt{0acd4eeb4b22}} \divider
-\href{https://github.com/torvalds/linux/commit/2bf6b9baca9372ea51b6d0f2820dc9bf29a83ef4}{\texttt{2bf6b9baca93}} \divider
-\href{https://github.com/torvalds/linux/commit/a58a57a1076f8c5dae0327e3710899478c3be901}{\texttt{a58a57a1076f}} \divider
-\href{https://github.com/torvalds/linux/commit/653c6e289b13cc6942f3e8f8e3c568e70fa42d1f}{\texttt{653c6e289b13}} \divider
-\href{https://github.com/torvalds/linux/commit/9417c5818a0146980c2608fda94c908e604eb033}{\texttt{9417c5818a01}} \divider
-\href{https://kernel.googlesource.com/pub/scm/linux/kernel/git/jic23/iio/+/f0f3401388dc9ba396d0c64888cf5aaf65e0dc06}{\texttt{f0f3401388dc}} \divider
-\href{https://github.com/torvalds/linux/commit/a9f950adfe2147318d75e7a6eab5e814851802ac}{\texttt{a9f950adfe21}} \divider
-\href{https://github.com/torvalds/linux/commit/a41000ba3a230bed1e422f283486ff8f77fe0d30}{\texttt{a41000ba3a23}}\par}
 
 \entry{Bitcoin Core}{2026}
 \begin{tight}
@@ -166,6 +157,12 @@ functional verification flow. Works end to end in C, Verilog and Python, from RT
 \begin{tight}
   \item Designed a 4-bit ALU datapath with a two-stage FSM execution model for deterministic instruction timing over a 256-byte banked address space.
   \item Specified a custom ISA and wrote a matching Python assembler; validated each instruction pre-silicon with directed testbenches, Icarus Verilog simulation and GTKWave waveform debug.
+\end{tight}
+
+\entry{TestLoom \divider Nuxt 3, Express, MongoDB, Redis, Socket.IO}{2025 -- 2026}
+\begin{tight}
+  \item Built \href{https://testloom.app}{testloom.app}, an exam-prep platform with server-authoritative grading: attempts snapshot papers server-side, shuffle with cryptographically secure Fisher--Yates, autosave, resume in place and hard-expire; correct answers never reach the client before submission.
+  \item Wrong answers feed an FSRS-6 review queue with a relearning step and configurable retention; graded responses update per-topic difficulty beliefs to select practice by coverage and urgency. Photo-to-question OCR feeds a human verification queue. JWT access tokens, rotating refresh cookies and Redis-backed rate limiting secure access.
 \end{tight}
 
 \entry{SANAD \divider Trust-First Document Translation Platform}{2026}
